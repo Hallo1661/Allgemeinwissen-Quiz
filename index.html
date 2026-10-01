@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172e31">
+  <meta name="description" content="Deutschsprachiges Allgemeinwissensquiz mit akademischem Schwerpunkt. Direkt lernen, Antworten prüfen und Fehler wiederholen.">
+  <title>Wissensraum – dein Lernquiz</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="questions.js"></script>
+  <script defer src="engine.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#question">Zur Frage springen</a>
+  <header class="masthead"><div class="brand"><span class="brand-mark" aria-hidden="true">w.</span><div><strong>Wissensraum</strong><span>Allgemeinwissen · Lernquiz</span></div></div><span class="edition">DEUTSCH <span aria-hidden="true">/</span> <span id="total-header">…</span> FRAGEN</span></header>
+  <main class="layout">
+    <aside class="sidebar" aria-label="Einstellungen und Lernfortschritt">
+      <div class="eyebrow">DEIN STUDIERZIMMER</div><h1>Eine Frage.<br>Ein bisschen klüger.</h1>
+      <p class="intro">Wissen abrufen, Lösungen verstehen und dranbleiben. In deinem Tempo.</p>
+      <form id="settings">
+        <h2>Deine Lernrunde</h2>
+        <label for="category">Themengebiet</label><select id="category" name="category"><option value="all">Alle Themen</option></select>
+        <div class="settings-row"><div><label for="length">Umfang</label><select id="length"><option value="10">10 Fragen</option><option value="20" selected>20 Fragen</option><option value="50">50 Fragen</option><option value="all">Alle Fragen</option></select></div><div><label for="mode">Antworten</label><select id="mode"><option value="choice">Auswahl</option><option value="text">Eintippen</option></select></div></div>
+        <label for="filter">Auswahl</label><select id="filter"><option value="all">Gemischt lernen</option><option value="unseen">Noch nicht beantwortet</option><option value="wrong">Fehler wiederholen</option></select>
+        <button class="primary start" type="submit">Neue Runde starten <span aria-hidden="true">↗</span></button>
+        <p class="small">Eine neue Runde ersetzt die laufende. Dein Gesamtfortschritt bleibt gespeichert.</p>
+      </form>
+      <section class="overall"><h2>Dein Fortschritt</h2><div class="stat-grid"><div><strong id="seen">0</strong><span>bearbeitet</span></div><div><strong id="mastered">0</strong><span>zuletzt richtig</span></div><div><strong id="mistakes">0</strong><span>zum Wiederholen</span></div></div><p class="small" id="storage-note">Wird nur in diesem Browser gespeichert.</p></section>
+      <details class="reset"><summary>Fortschritt zurücksetzen</summary><p class="small">Löscht deine Antworten und die laufende Runde auf diesem Gerät.</p><button id="reset" type="button" class="text-button">Jetzt lokal zurücksetzen</button></details>
+    </aside>
+    <section class="workspace" aria-label="Quiz">
+      <div class="round-bar"><span id="round-label">Deine Runde</span><span id="round-score">0 richtig</span></div>
+      <progress id="round-progress" value="0" max="20" aria-label="Fortschritt dieser Runde"></progress>
+      <p id="notice" role="status" class="notice" hidden></p>
+      <article class="question-card" id="quiz-card">
+        <div class="question-meta"><span class="topic-pill" id="topic">Allgemeinwissen</span><span class="question-number" id="number"></span></div>
+        <p class="subtopic" id="subtopic"></p>
+        <h2 id="question" tabindex="-1">Fragen werden geladen …</h2>
+        <form id="answer-form">
+          <fieldset id="choices"><legend class="sr-only">Wähle deine Antwort</legend><div id="choice-list" class="choice-grid"></div></fieldset>
+          <div id="text-answer" hidden><label for="answer">Deine Antwort</label><input id="answer" autocomplete="off" maxlength="500" placeholder="Was weißt du noch?" aria-describedby="matching-note"><p class="small" id="matching-note">Abgleich mit hinterlegten Antworten, keine KI-Bewertung. Gleichwertige Formulierungen kannst du nachträglich als richtig markieren.</p></div>
+          <div class="answer-actions"><button class="primary" id="check" type="submit">Antwort prüfen <span aria-hidden="true">→</span></button><button id="reveal" class="quiet" type="button">Weiß ich noch nicht</button></div>
+        </form>
+        <section id="feedback" class="feedback" role="status" aria-live="polite" hidden><h3 id="feedback-title"></h3><p id="feedback-text"></p><p id="solution" class="solution"></p><button id="override" class="text-button" type="button" hidden>Meine Formulierung ist auch richtig</button></section>
+        <details id="explanation" class="explanation" hidden><summary>Hintergrund & Quelle</summary><p id="explanation-text"></p><p id="source-links"></p><p class="small" id="source-note"></p></details>
+        <div class="next-row" id="next-row" hidden><span class="small">In Ruhe nachlesen. Dann weiter.</span><button id="next" class="primary" type="button">Nächste Frage →</button></div>
+      </article>
+      <article class="question-card complete" id="complete" hidden><span class="completion-mark" aria-hidden="true">✓</span><p class="eyebrow">RUNDE ABGESCHLOSSEN</p><h2 id="complete-title" tabindex="-1">Gut, dass du dranbleibst.</h2><p id="complete-result"></p><div class="completion-actions"><button id="again" class="primary" type="button">Nächste Runde →</button><button id="repeat" class="quiet" type="button">Fehler dieser Runde üben</button></div></article>
+      <div class="bottom-note"><span class="small">Ohne Zeitdruck. Ohne Konto. Lernen für dich.</span><a href="ANLEITUNG.html">Anleitung</a></div>
+      <details class="about"><summary>Fragenbestand, Prüfung & Lizenzen</summary><div id="dataset-info"></div><p>Alle Fragen und Lösungen sind mitgeliefert. Beim Spielen werden keine externen Dienste abgefragt. Nur ein Klick auf einen Quellenlink öffnet die jeweilige Website.</p><p><a href="QUELLEN.md">Quellen und Lizenzhinweise</a> · <a href="PRUEFBERICHT.md">Umfang und Prüfgrenzen</a></p></details>
+    </section>
+  </main>
+  <footer>Wissensraum <span aria-hidden="true">·</span> Neugier ist ein guter Anfang.</footer>
+  <noscript><p class="notice">Bitte aktiviere JavaScript, um das Quiz zu spielen. Die App benötigt keine Installation.</p></noscript>
+</body>
+</html>
