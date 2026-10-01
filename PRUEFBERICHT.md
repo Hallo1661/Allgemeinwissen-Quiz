@@ -1,76 +1,63 @@
-# Prüfbericht – Wissensraum
+# Prüfbericht: Chemie Oberstufe Niedersachsen
 
-Stand: 1. Oktober 2026.
+Stand: 1. Oktober 2026. Genau **2.000 Aufgaben**, je 200 in zehn Themengebieten.
 
-## Tatsächlich enthalten
-
-**3.013 Fragen statt der gewünschten 5.000. Es fehlen 1.987.** Die Zahl bezeichnet ausgelieferte unterschiedliche Datensätze mit Frage, Antwort und Herkunft; sie ist kein Gütesiegel für eine unabhängige fachliche Einzelprüfung aller Fakten.
-
-| Kategorie | Fragen |
+| Themengebiet | Anzahl |
 |---|---:|
-| Geografie | 36 |
-| Geschichte | 82 |
-| Gesellschaft & Wirtschaft | 17 |
-| Naturwissenschaften | 81 |
-| Philosophie & Religion | 31 |
-| Sprache & Kultur | 32 |
-| Technik & Informatik | 51 |
-| Literatur | 2.251 |
-| Kunst | 66 |
-| Musik | 366 |
+| Stoffaufbau | 200 |
+| Stoffmengen & Lösungen | 200 |
+| Organische Verbindungen | 200 |
+| Organische Reaktionswege | 200 |
+| Chemisches Gleichgewicht | 200 |
+| Energetik | 200 |
+| Reaktionsgeschwindigkeit | 200 |
+| Säuren & Basen | 200 |
+| Redox & Elektrochemie | 200 |
+| Makromoleküle & Analytik | 200 |
 
-Der Bestand enthält 330 ausgewählte GermanQuAD-Fragen und 2.683 aus tatsächlichen Wikidata-Werkzuordnungen formulierte Fragen. Literatur ist mit Abstand die größte Kategorie. Kurze gemischte Runden werden nach Kategorien ausgewogen zusammengestellt; über „Alle Fragen“ ist der gesamte Bestand erreichbar.
+Niveaus: E/Grundlagen 522, gA 993, eA 485. gA-Auswahl in der App schließt E ein.
 
-## Datenauswahl und Grenzen
+426 Verständnis-/Strukturfragen; 1574 Rechenvarianten. Die Zahl bezeichnet Aufgaben einschließlich systematischer Varianten, keine 2.000 verschiedenen Fachkonzepte. Aufgabenfamilien: 223, wobei einzelne Verständnisfragen eigene Familien sind.
 
-Die vorhandenen Werk-Abfragen lieferten 2.857 Literatur-, 1.166 Kunst- und 4.669 Musikzeilen. Eine Rohdatenzeile ist nicht automatisch eine geeignete Quizfrage. Ausgeschlossen wurden insbesondere:
+## Inhalts- und Datenprüfungen
 
-- fehlende auf Deutsch nutzbare Personennamen im lokalen Bestand;
-- mehrere unterschiedliche Personen für dieselbe abgefragte Zuordnung;
-- offensichtliche Nummernserien und Katalognummern, verräterische Namen im Werktitel sowie unklare Klammerzusätze;
-- bei Musik: Filme, Sammlungen und Einträge ohne lokal prüfbare musikalische Einordnung;
-- bei vorhandenen Einzelangaben: widersprüchliche Werte und bestimmte unsichere oder eingeschränkte Zuschreibungen;
-- redaktionell erkannte problematische Kunstzuschreibungen, gemeinsame Gesamtwerke und eine besonders ähnliche Frageform;
-- doppelte Werk-IDs, gleiche normalisierte Werktitel und doppelte normalisierte Frageformulierungen.
+- 2000 eindeutige IDs und Fragetexte
+- 4 unterschiedliche Optionen, genau eine vom Matcher akzeptiert
+- Alle Musterlösungen akzeptiert, Vorzeichen und Einheiten geschützt
+- Rechenwerte mit separaten Formelfunktionen nachgerechnet
+- Niveau- und Aufgabentypfilter geprüft
+- Keine Themen- oder Quellentitel oberhalb der Frage
 
-Für 369 der ausgelieferten Wikidata-Fragen lagen zusätzliche vollständige Eigenschaftsangaben zur Einzelprüfung auf Widersprüche/Einschränkungen vor. 2.314 beruhen auf der gespeicherten direkten Wikidata-Abfrage. Das bestätigt die Herkunft der Zuordnung, nicht ihre unabhängige wissenschaftliche Richtigkeit. Die Auswahl wurde stichprobenartig inhaltlich gesichtet; beispielsweise wurden Filmmusik-Zuordnungen nicht als Komposition des Films ausgegeben. Nicht jede der 3.013 Fragen wurde durch eine zweite Fachquelle bestätigt. Verbleibende Fehler oder unerkannte semantische Überschneidungen sind möglich. Eine vollständige Garantie semantischer Duplikatfreiheit wird nicht behauptet.
+1221 Ergebnisse wurden mit separaten Formelfunktionen nachgerechnet. Alle 1574 Zahlenaufgaben wurden auf gültige Werte, Akzeptanz der Musterlösung, Einheitenbehandlung, falsche Vorzeichen und eindeutig unterscheidbare Auswahlantworten geprüft. Die übrigen Musterwerte und Strukturaufgaben beruhen auf expliziten chemischen Regeln im Generator; eine unabhängige fachliche Einzelprüfung aller 2.000 Aufgaben durch eine Lehrkraft ist nicht erfolgt.
 
-Die GermanQuAD-Fragen wurden einzeln auf Verständlichkeit und Plausibilität ausgewählt und vielfach umformuliert. Die Originalantworten der Kandidaten wurden automatisch gegen die im Datensatz angegebenen Textpositionen geprüft. Die Hintergrundtexte sind historische Datensatzpassagen, keine aktuellen Nachschlageartikel. In der App lassen sich Quellen direkt nach der Antwort öffnen.
+## Funktionstests
 
-Die Auswahl wurde nicht mit erfundenen Fakten, Wiederholungen oder künstlichen Zahlenvariationen auf 5.000 aufgefüllt. Nicht vollständig aufbereitete Rohdaten werden nicht als fertige Fragen mitgezählt und nicht mit der App ausgeliefert.
+- Alle Datensätze: IDs, normalisierte Fragen, Antworten, Quellen und genau eine richtige Auswahl
+- Gemischte Runde verteilt 20 Fragen über alle 10 Kategorien
+- Start unter GitHub-Pages-Unterpfad, keine externen Spiel-Anfragen
+- Falsche Auswahl zeigt sofort Falsch, richtige Lösung und Wiederholungszähler
+- Neuladen erhält laufende Frage, Bewertung und Fortschritt
+- Richtige Antwort, Weiter und Rundenabschluss zählen korrekt
+- Fehler dieser Runde wiederholen; richtige Wiederholung entfernt den Fehler
+- Freitext per Enter sofort richtig bewertet
+- Freitextfehler zeigt Lösung; manuelle Wertungskorrektur aktualisiert Statistik
+- Weiß ich noch nicht deckt Lösung auf und merkt Frage zur Wiederholung
+- Kategorie und Rundenlänge funktionieren
+- Leerer Fehlerfilter gibt verständliche Rückmeldung
+- Alle Fragen: vollständiger Bestand ohne Wiederholung in der Runde
+- Beschädigte lokale Speicherung wird abgefangen
+- Alle zehn Themen: vor der Antwort nur neutrale Überschrift, keine Lösung oder Erklärung sichtbar
+- Niveau- und Rechenfilter wirken in der Oberfläche und bleiben nach Neuladen erhalten
+- Zahleneingabe: Dezimalkomma akzeptiert; falsches Vorzeichen abgelehnt
+- Mobile Breite 375 px: keine horizontale Überbreite; Antworten bedienbar
+- Ohne localStorage spielbar, Speichereinschränkung wird angezeigt
+- Direkt per index.html vom Dateisystem spielbar
+- Keine unbehandelten JavaScript-Fehler im Test
 
-## Technischer Test
+Zusätzlich: Chemie-spezifischer Zahlenabgleich, Unterscheidung von Co und CO sowie Ladungen, Niveau-/Typfilter und feste neutrale Überschrift. Der frühere Quellentitel erscheint nicht mehr vor der Frage. Desktop und 375-Pixel-Mobilansicht geprüft.
 
-Automatischer Browserlauf in Microsoft Edge/Chromium 154.0.4258.48, zusätzlich direkte Prüfungen der Daten und Programmlogik. Getestet über einen lokalen HTTP-Unterpfad `/lernquiz/` als Modell eines GitHub-Pages-Projektpfads sowie per `file://`.
+## Grenzen
 
-- Bestanden: Alle Datensätze: IDs, normalisierte Fragen, Antworten, Quellen und genau eine richtige Auswahl
-- Bestanden: Freitext: Großschreibung, Datum, falsche Werte und leere Antworten
-- Bestanden: Gemischte Runde verteilt 20 Fragen über alle 10 Kategorien
-- Bestanden: Start unter GitHub-Pages-Unterpfad, keine externen Spiel-Anfragen
-- Bestanden: Falsche Auswahl zeigt sofort Falsch, richtige Lösung und Wiederholungszähler
-- Bestanden: Neuladen erhält laufende Frage, Bewertung und Fortschritt
-- Bestanden: Richtige Antwort, Weiter und Rundenabschluss zählen korrekt
-- Bestanden: Fehler dieser Runde wiederholen; richtige Wiederholung entfernt den Fehler
-- Bestanden: Freitext per Enter sofort richtig bewertet
-- Bestanden: Freitextfehler zeigt Lösung; manuelle Wertungskorrektur aktualisiert Statistik
-- Bestanden: Weiß ich noch nicht deckt Lösung auf und merkt Frage zur Wiederholung
-- Bestanden: Kategorie und Rundenlänge funktionieren
-- Bestanden: Leerer Fehlerfilter gibt verständliche Rückmeldung
-- Bestanden: Alle Fragen: vollständiger Bestand ohne Wiederholung in der Runde
-- Bestanden: Beschädigte lokale Speicherung wird abgefangen
-- Bestanden: Mobile Breite 375 px: keine horizontale Überbreite; Antworten bedienbar
-- Bestanden: Ohne localStorage spielbar, Speichereinschränkung wird angezeigt
-- Bestanden: Direkt per index.html vom Dateisystem spielbar
-- Bestanden: Keine unbehandelten JavaScript-Fehler im Test
+Themenorientierung am KC 2022; kein Anspruch auf vollständige curriculare Abdeckung oder jahrgangsspezifische Abiturvorbereitung. Kurze Auswahl-/Rechenaufgaben prüfen keine vollständigen experimentellen, zeichnerischen oder argumentativen Leistungen. Manche Rechenmodelle (z. B. vorgegebene kinetische Gesetze) sind ergänzende Übungen. Textantworten werden nicht semantisch interpretiert. Rundungstoleranz entspricht einer halben Einheit der letzten geforderten Nachkommastelle. Andere Einheiten werden nicht konvertiert.
 
-Die Desktop- und mobile Darstellung (375 Pixel Breite) wurden zusätzlich anhand der gerenderten Screenshots visuell angesehen. Die App enthält keine unbehandelten JavaScript-Fehler in den getesteten Abläufen. Es wurde kein echtes GitHub-Repository angelegt und keine Website veröffentlicht; eine tatsächlich ausgeführte GitHub-Pages-Bereitstellung ist daher nicht Bestandteil dieser Prüfung.
-
-## Antwortvergleich
-
-Bei Auswahlfragen ist genau eine angebotene Antwort hinterlegt. Freitext wird gegen gespeicherte Antworten und Varianten verglichen, nicht semantisch durch KI beurteilt. Eine andere richtige Formulierung kann als falsch erkannt werden; die App erklärt diese Grenze und ermöglicht eine manuelle Korrektur der Wertung. Das Aufdecken ohne eigene Antwort zählt als zu wiederholende Frage.
-
-## Nachvollziehbarkeit
-
-`DATENPRUEFUNG.json` enthält Zählungen, Aussonderungsstatistiken und die verwendeten Wikidata-Zuordnungen. SHA-256 der ausgelieferten `questions.js`:
-
-`31c934b832074acc1250e1a3b9da6e4233ad89e17aaa206f87f6ac45773a3187`
+SHA-256 von questions.js: cc0ec9dd46bdc7cf2dce9c296cc68b8ae97a1ae719354da2ae425b9250f4d8da

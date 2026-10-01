@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#172e31">
-  <meta name="description" content="Deutschsprachiges Allgemeinwissensquiz mit akademischem Schwerpunkt. Direkt lernen, Antworten prüfen und Fehler wiederholen.">
-  <title>Wissensraum – dein Lernquiz</title>
+  <meta name="description" content="2.000 Chemie-Übungsaufgaben für die Oberstufe in Niedersachsen. Direkt lernen, Antworten prüfen und Fehler wiederholen.">
+  <title>Wissensraum – Chemie Oberstufe Niedersachsen</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script defer src="questions.js"></script>
@@ -14,15 +14,15 @@
 </head>
 <body>
   <a class="skip-link" href="#question">Zur Frage springen</a>
-  <header class="masthead"><div class="brand"><span class="brand-mark" aria-hidden="true">w.</span><div><strong>Wissensraum</strong><span>Allgemeinwissen · Lernquiz</span></div></div><span class="edition">DEUTSCH <span aria-hidden="true">/</span> <span id="total-header">…</span> FRAGEN</span></header>
+  <header class="masthead"><div class="brand"><span class="brand-mark" aria-hidden="true">w.</span><div><strong>Wissensraum</strong><span>Chemie · Oberstufe Niedersachsen</span></div></div><span class="edition">DEUTSCH <span aria-hidden="true">/</span> <span id="total-header">…</span> FRAGEN</span></header>
   <main class="layout">
     <aside class="sidebar" aria-label="Einstellungen und Lernfortschritt">
       <div class="eyebrow">DEIN STUDIERZIMMER</div><h1>Eine Frage.<br>Ein bisschen klüger.</h1>
-      <p class="intro">Wissen abrufen, Lösungen verstehen und dranbleiben. In deinem Tempo.</p>
+      <p class="intro">Chemie verstehen, rechnen und begründen. Für Einführungsphase, gA und eA.</p>
       <form id="settings">
         <h2>Deine Lernrunde</h2>
         <label for="category">Themengebiet</label><select id="category" name="category"><option value="all">Alle Themen</option></select>
-        <div class="settings-row"><div><label for="length">Umfang</label><select id="length"><option value="10">10 Fragen</option><option value="20" selected>20 Fragen</option><option value="50">50 Fragen</option><option value="all">Alle Fragen</option></select></div><div><label for="mode">Antworten</label><select id="mode"><option value="choice">Auswahl</option><option value="text">Eintippen</option></select></div></div>
+        <label for="level">Lernniveau</label><select id="level"><option value="all">Alle Niveaus</option><option value="E">Einführungsphase / Grundlagen</option><option value="gA">gA einschließlich Grundlagen</option><option value="eA">eA-Vertiefung</option></select><label for="kind">Aufgabentyp</label><select id="kind"><option value="all">Verständnis &amp; Rechnen</option><option value="Verständnis">Verständnis &amp; Struktur</option><option value="Rechenvariante">Rechenübungen</option></select><div class="settings-row"><div><label for="length">Umfang</label><select id="length"><option value="10">10 Fragen</option><option value="20" selected>20 Fragen</option><option value="50">50 Fragen</option><option value="all">Alle Fragen</option></select></div><div><label for="mode">Antworten</label><select id="mode"><option value="choice">Auswahl</option><option value="text">Eintippen</option></select></div></div>
         <label for="filter">Auswahl</label><select id="filter"><option value="all">Gemischt lernen</option><option value="unseen">Noch nicht beantwortet</option><option value="wrong">Fehler wiederholen</option></select>
         <button class="primary start" type="submit">Neue Runde starten <span aria-hidden="true">↗</span></button>
         <p class="small">Eine neue Runde ersetzt die laufende. Dein Gesamtfortschritt bleibt gespeichert.</p>
@@ -35,8 +35,8 @@
       <progress id="round-progress" value="0" max="20" aria-label="Fortschritt dieser Runde"></progress>
       <p id="notice" role="status" class="notice" hidden></p>
       <article class="question-card" id="quiz-card">
-        <div class="question-meta"><span class="topic-pill" id="topic">Allgemeinwissen</span><span class="question-number" id="number"></span></div>
-        <p class="subtopic" id="subtopic"></p>
+        <div class="question-meta"><span class="topic-pill" id="topic">Chemie · Oberstufe</span><span class="question-number" id="number"></span></div>
+        <p class="subtopic" id="subtopic" hidden></p>
         <h2 id="question" tabindex="-1">Fragen werden geladen …</h2>
         <form id="answer-form">
           <fieldset id="choices"><legend class="sr-only">Wähle deine Antwort</legend><div id="choice-list" class="choice-grid"></div></fieldset>
@@ -44,7 +44,7 @@
           <div class="answer-actions"><button class="primary" id="check" type="submit">Antwort prüfen <span aria-hidden="true">→</span></button><button id="reveal" class="quiet" type="button">Weiß ich noch nicht</button></div>
         </form>
         <section id="feedback" class="feedback" role="status" aria-live="polite" hidden><h3 id="feedback-title"></h3><p id="feedback-text"></p><p id="solution" class="solution"></p><button id="override" class="text-button" type="button" hidden>Meine Formulierung ist auch richtig</button></section>
-        <details id="explanation" class="explanation" hidden><summary>Hintergrund & Quelle</summary><p id="explanation-text"></p><p id="source-links"></p><p class="small" id="source-note"></p></details>
+        <details id="explanation" class="explanation" hidden><summary>Lösungsweg &amp; Themenbezug</summary><p id="explanation-text"></p><p id="source-links"></p><p class="small" id="source-note"></p></details>
         <div class="next-row" id="next-row" hidden><span class="small">In Ruhe nachlesen. Dann weiter.</span><button id="next" class="primary" type="button">Nächste Frage →</button></div>
       </article>
       <article class="question-card complete" id="complete" hidden><span class="completion-mark" aria-hidden="true">✓</span><p class="eyebrow">RUNDE ABGESCHLOSSEN</p><h2 id="complete-title" tabindex="-1">Gut, dass du dranbleibst.</h2><p id="complete-result"></p><div class="completion-actions"><button id="again" class="primary" type="button">Nächste Runde →</button><button id="repeat" class="quiet" type="button">Fehler dieser Runde üben</button></div></article>

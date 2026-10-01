@@ -1,60 +1,34 @@
-# Wissensraum – deutsches Lernquiz
+# Wissensraum – Chemie Oberstufe Niedersachsen
 
-Eine fertige statische Quiz-App mit **3.013 Fragen**. Kein Build, kein Backend, kein API-Schlüssel, kein kostenpflichtiger Dienst.
+**2.000 Chemie-Übungsaufgaben** für Einführungsphase, grundlegendes Anforderungsniveau (gA) und erhöhtes Anforderungsniveau (eA).
 
-**Umfang:** Das gewünschte reduzierte Ziel von 5.000 Fragen ist nicht erreicht; es fehlen 1.987. Der Bestand ist deutlich literaturlastig. Gemischte kurze Runden verteilen die Fragen gleichmäßig über die verfügbaren Kategorien. Quellen und Prüfgrenzen stehen in [QUELLEN.md](QUELLEN.md) und [PRUEFBERICHT.md](PRUEFBERICHT.md). Eine unabhängige fachliche Prüfung jeder einzelnen Antwort wird nicht behauptet.
+[Quiz online öffnen](https://hallo1661.github.io/Allgemeinwissen-Quiz/)
 
-## Sofort ausprobieren
+## Lernen
 
-1. Die ZIP-Datei vollständig entpacken.
-2. Im entpackten Ordner **index.html** doppelt anklicken.
-3. Antwort auswählen oder eintippen und **Antwort prüfen** drücken. Sofort erscheint richtig oder falsch; bei Fehlern wird die richtige Lösung angezeigt.
+- Oberhalb der Frage steht ausschließlich „Chemie · Oberstufe“. Individuelle Themen, Quellentitel und Lösungen werden dort nicht eingeblendet.
+- Themengebiet, Lernniveau, Aufgabentyp und Rundenlänge auswählen; mit „Neue Runde starten“ übernehmen.
+- gA enthält auch die Grundlagen der Einführungsphase. eA-Vertiefung zeigt ausschließlich die als eA eingeordneten Aufgaben. „Alle Niveaus“ umfasst den gesamten Bestand.
+- Bei Auswahlfragen gibt es vier Möglichkeiten und eine hinterlegte richtige Antwort. „Eintippen“ ist ebenfalls möglich.
+- Rechenaufgaben nennen Einheit und Rundung. Zahl mit Komma oder Punkt eingeben; die gefragte Einheit darf mitgeschrieben oder weggelassen werden. Wissenschaftliche Schreibweise wie 1e-3 ist möglich. Andere Einheiten werden nicht automatisch umgerechnet.
+- Chemische Formeln werden mit korrekter Groß-/Kleinschreibung und Ladung abgeglichen. Bei längeren Textantworten findet keine semantische KI-Bewertung statt; sinngleiche Antworten können manuell als richtig markiert werden.
+- Direkt nach der Prüfung erscheint richtig/falsch und die richtige Lösung. „Lösungsweg & Themenbezug“ enthält die Erklärung.
+- „Weiß ich noch nicht“ deckt die Lösung auf. Fehler lassen sich erneut üben.
 
-Die Dateien müssen zusammenbleiben. Eine Vorschau innerhalb eines ZIP-Archivs funktioniert nicht zuverlässig.
+## Was die Zahl 2.000 bedeutet
 
-## Bei GitHub hochladen und online nutzen
+Der Bestand enthält 426 Verständnis- und Strukturfragen sowie 1574 Rechenvarianten. Mehrere Aufgaben üben dieselbe Methode mit anderen Stoffen, Strukturen oder Zahlen. Es sind **keine 2.000 unabhängigen Lernziele**. Die interne Gruppierung umfasst 223 Aufgabenfamilien einschließlich einzelner Verständnisfragen.
 
-1. Bei GitHub anmelden und ein neues **öffentliches Repository** anlegen, z. B. `wissensquiz`. Öffentlich ermöglicht GitHub Pages mit GitHub Free.
-2. Im Repository **Add file → Upload files** öffnen. Bei einem noch leeren Repository auf **uploading an existing file** klicken.
-3. **Alle entpackten Dateien aus diesem Ordner** hochladen. Wichtig: `index.html` muss direkt auf der obersten Ebene des Repositorys liegen, nicht in einem zusätzlichen Unterordner. **Nicht die ZIP-Datei selbst hochladen.**
-4. Mit **Commit changes** speichern. Der Standardbranch heißt gewöhnlich `main`.
-5. **Settings → Pages** öffnen. Unter **Build and deployment → Source** die Option **Deploy from a branch** wählen.
-6. Branch **main**, Ordner **/ (root)** wählen und **Save** klicken.
-7. Einige Minuten warten. Unter **Settings → Pages** erscheint der Website-Link, normalerweise `https://DEIN-NAME.github.io/wissensquiz/`.
+Die Themen orientieren sich am [niedersächsischen Kerncurriculum Chemie 2022](https://cuvo.nibis.de/cuvo.php?p=download&upload=362). Die Einordnung ist eine Lernhilfe, keine amtliche Zuordnung jeder Einzelaufgabe. Rechenmodelle sind teilweise ergänzende Vertiefungen. Jahresbezogene Abiturhinweise und der Unterrichtsplan der eigenen Schule müssen zusätzlich berücksichtigt werden. Das Quiz ersetzt keine materialgebundenen Klausuraufgaben, Experimente oder ausführlichen Begründungen.
 
-Du brauchst kein Terminal, kein npm und keinen eigenen Build. GitHub erledigt die Pages-Bereitstellung. Der Upload und die Aktivierung werden von dir vorgenommen; für diese Lieferung wurde nichts veröffentlicht und kein Repository angelegt.
+## Lokal und bei GitHub
 
-Offizielle Anleitung: [GitHub Pages konfigurieren](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+Die entpackte index.html im Browser öffnen; alle Dateien müssen zusammenbleiben. Kein Build, Backend oder API-Schlüssel. Offline funktioniert die lokale Kopie. Die Online-Version benötigt zum ersten Laden Internet und besitzt keinen garantierten Offline-Cache.
 
-## So lernst du
+Bei Änderungen alle Dateien dieses Ordners in das Repository-Hauptverzeichnis hochladen und committen. Unter Settings → Pages: „Deploy from a branch“, main, / (root). Die ZIP-Datei selbst genügt nicht. In diesem Projekt ist Pages bereits eingerichtet; nach neuen Commits wird die Website automatisch aktualisiert.
 
-- Wähle ein Themengebiet und 10, 20, 50 oder alle Fragen. **Neue Runde starten** übernimmt die Einstellungen.
-- **Auswahl:** Bei 2.683 Werkfragen gibt es vier Antwortmöglichkeiten; genau eine davon ist die hinterlegte richtige Antwort. Die 330 übrigen Fragen verwenden Freitext.
-- **Eintippen:** Nutzt bei allen Fragen Freitext. Der lokale Vergleich ignoriert Großschreibung, Akzente, manche Artikel und überflüssige Satzzeichen. Hinterlegte Namensvarianten und numerische Datumsformen werden berücksichtigt. Es findet keine semantische KI-Bewertung statt. Eine sinngleiche, nicht erkannte Antwort lässt sich über **Meine Formulierung ist auch richtig** korrigieren.
-- **Weiß ich noch nicht** zeigt die Lösung und merkt die Frage als Fehler.
-- **Hintergrund & Quelle** zeigt die jeweilige Herkunft; bei GermanQuAD auch den historischen Hintergrundtext.
-- **Fehler wiederholen** nutzt Fragen, deren letzte Bewertung falsch war. Eine richtige Wiederholung entfernt sie aus dieser Auswahl.
-- Am Rundenende kannst du gezielt die Fehler dieser Runde wiederholen.
+Fortschritt wird nur im jeweiligen Browser gespeichert. Der Chemie-Bestand verwendet eine eigene Speicherversion; der frühere Allgemeinwissen-Fortschritt wird nicht als Chemie-Fortschritt übernommen.
 
-## Speicherung und Offline-Nutzung
+## Prüfung und Rechte
 
-Fortschritt und laufende Runde werden nur im lokalen Speicher dieses Browsers gespeichert. Kein Benutzerkonto, keine Übertragung der Antworten, kein Tracking. Andere Geräte oder Browser haben einen eigenen Fortschritt. Privater Modus oder das Löschen von Websitedaten kann ihn entfernen. Ohne erlaubten lokalen Speicher bleibt das Quiz spielbar, speichert aber nicht dauerhaft.
-
-Die entpackte lokale Version funktioniert offline. Für die erstmalige Nutzung der GitHub-Pages-Version brauchst du Internet; ein installierbarer Offline-Cache ist nicht Bestandteil der App. Das Spielen selbst fragt keine externen APIs ab. Quellenlinks benötigen Internet.
-
-## Dateien
-
-- `index.html`, `styles.css`, `app.js`, `engine.js`, `questions.js`, `favicon.svg`: vollständige App.
-- `ANLEITUNG.html`, `README.md`: Bedienung und GitHub-Upload.
-- `QUELLEN.md`, `LICENSE-CODE.txt`: Herkunft und Lizenzen; beim Weitergeben beibehalten.
-- `PRUEFBERICHT.md`, `DATENPRUEFUNG.json`: Zählung, Auswahlgrenzen und Prüfung.
-- `.nojekyll`: verhindert eine unnötige Jekyll-Verarbeitung, sofern mit hochgeladen. Die App verwendet keine speziellen Jekyll-Funktionen und funktioniert auch ohne diese Datei.
-
-## Falls die Website nicht erscheint
-
-- Prüfen, ob `index.html` tatsächlich im Repository-Hauptordner liegt und die Schreibweise unverändert ist.
-- Unter Pages prüfen: richtiger Branch, **/ (root)** und **Deploy from a branch**.
-- Unter **Actions** den Pages-Bereitstellungsstatus ansehen. GitHub kann einige Minuten brauchen.
-- Wenn nur die Fragen fehlen: `questions.js` und `engine.js` mit hochladen und die Seite neu laden.
-
-Stand: 1. Oktober 2026.
+Siehe [PRUEFBERICHT.md](PRUEFBERICHT.md), [DATENPRUEFUNG.json](DATENPRUEFUNG.json), [QUELLEN.md](QUELLEN.md) und [LICENSE-CODE.txt](LICENSE-CODE.txt). Stand: 1. Oktober 2026.

@@ -20,5 +20,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Applies to app code only. Question data and background passages have separate
-licences described in QUELLEN.md.
+
+
+Geltungsbereich: App-Code sowie eigenständig erstellte Chemie-Aufgaben und Erklärungen. Verlinkte externe Dokumente sind ausgenommen.
+
+
+Geltungsbereich: App-Code sowie eigenständig erstellte Chemie-Aufgaben und Erklärungen. Verlinkte externe Dokumente sind ausgenommen.
